@@ -1,10 +1,11 @@
 <?php
-$config_json = file_get_contents('config.json');
-$config = json_decode($config_json, true);
-
+//$config_json = file_get_contents('config.json');
+//$config = json_decode($config_json, true);
+include "config.php";
 $resp = array();
 $msg = array();
-chdir($config["data_dir"]);
+//chdir($config["data_dir"]);
+chdir($data_dir);
 $files = glob("*");
 $n = 0;
 $m = 0;
@@ -13,11 +14,11 @@ foreach($files as $file){
     $msg['filename'] = $file; 
     $create = filemtime($file);
     $msg['create-at'] = date('Y-m-d H:i:s', $create);
-    $saved = round((time() - $create)/60/60);
-    $msg['hours-saved'] = $saved;
+    $saved = round(time() - $create);
+    $msg['saved-seconds'] = $saved;
     $msg['expired'] = false;
     $msg['deleted'] = false;
-    if ($saved > 24){
+    if ($saved > $expired_second){
         $msg['expired'] = true;
     }
     if ($msg['expired'] == true){

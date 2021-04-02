@@ -76,14 +76,14 @@
   {
     "filename": "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20dfg2",
     "create-at": "2021-01-12 16:22:29",
-    "hours-saved": 0,
+    "saved-seconds": 0,
     "expired": false,
     "deleted": false
   },
   {
     "filename": "cd7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
     "create-at": "2021-01-12 16:22:31",
-    "hours-saved": 0,
+    "saved-seconds": 0,
     "expired": false,
     "deleted": false
   }
